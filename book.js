@@ -97,16 +97,12 @@ function updateBook(id) {
         bookForm.append('image',image.prop('files')[0]);
     }
     $.ajax({
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
         type:"POST",
         enctype:'multipart/form-data',
         processData:false,
         contentType:false,
         data:bookForm,
-        url:"http://localhost:8080/books/edit/"+id,
+        url:`http://localhost:8080/books/${id}`,
         success:showAllBook
     })
 
